@@ -19,4 +19,4 @@ PVC:
   name: "pvcclaim"
 
 StorageClass:
-  name: "StorageClass"
+  name: "Spring-EBS-Slow"

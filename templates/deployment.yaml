@@ -18,17 +18,16 @@ spec:
         ports:
         - containerPort: {{ .Values.containerPort }}
         env:
-         - name: {{ .Values.Configmap.name }}
+         - name: MYAPP_USER_NAME
+           valueFrom:
+            configMapKeyRef:
+             name: {{ .Values.Configmap.name }}
+             key: {{ .Values.Configmap.user }}
+         - name: MYAPP_USER_SECRET 
            valueFrom:
             secretKeyRef:
-             name: {{ .Values.Configmap.User }}
-             key: {{ .Values.Configmap.User }}
-        env:
-         - name: {{ .Values.Secret.name }}
-           valueFrom:
-           secretKeyRef:
-            name: {{ .Values.Configmap.User }}
-            key: {{ .Values.Configmap.pass }}
+              name: {{ .Values.Secret.name }}
+              key: {{ .Values.Secret.pass }}
         volumeMounts:
          - name: storage
            mountPath: '/storage'

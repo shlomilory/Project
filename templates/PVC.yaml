@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
  name: {{ .Values.PVC.name }}
  annotations:
-   volume.beta.kubernetes.io/storageClassName: slow-io
+   volume.beta.kubernetes.io/storageClassName: {{ .Values.StorageClass.name | quote }}
 spec:
  storageClassName: slow-io
  accessModes:
