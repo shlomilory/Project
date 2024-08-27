@@ -1,0 +1,22 @@
+image: "yanivomc/spring-music"
+tag: "latest"
+containerPort: "8080"
+
+service:
+  type: "LoadBalancer"
+  port: "8080"
+  name: "myapp-svc"
+
+Configmap:
+  name: User
+  User: myuser
+
+Secret:
+  name: secret
+  pass: "1234"
+
+PVC:
+  name: "pvc-claim"
+
+StorageClass:
+  name: "StorageClass"

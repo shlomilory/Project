@@ -1,0 +1,13 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+ name: {{ .Values.PVC.name }}
+ annotations:
+   volume.beta.kubernetes.io/storageClassName: slow-io
+spec:
+ storageClassName: slow-io
+ accessModes:
+   - ReadWriteOnce
+ resources:
+   requests:
+     storage: 5Gi
