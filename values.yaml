@@ -5,18 +5,18 @@ containerPort: "8080"
 service:
   type: "LoadBalancer"
   port: "8080"
-  name: "myapp-svc"
+  name: "myappsvc"
 
 Configmap:
-  name: User
-  User: myuser
+  name: "springcm"
+  user: "myuser"
 
 Secret:
   name: secret
-  pass: "1234"
+  pass: "MTIzNA=="
 
 PVC:
-  name: "pvc-claim"
+  name: "pvcclaim"
 
 StorageClass:
   name: "StorageClass"

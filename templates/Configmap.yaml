@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: {{ .Values.Configmap.name }}
 data:
-  user: {{ .Values.Configmap.User }}
+  user: {{ .Values.Configmap.user }}
